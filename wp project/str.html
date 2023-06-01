@@ -1,0 +1,131 @@
+<html>
+ <head>
+  <style type="text/css">
+		form {
+			width: 500px;
+			margin: auto;
+			padding: 20px;
+			border: 1px solid #f70606;
+			border-radius: 5px;
+		}
+		input, select {
+			margin: 10px 0;
+			padding: 10px;
+			border-radius: 5px;
+			border: 1px solid #110af6;
+			font-size: 16px;
+			width: 100%;
+		}
+    h4{
+      color:red;
+    }
+    h1{
+      color:blue;
+    }
+  </style>
+  <script>
+    function validate()
+    {
+      var name=document.getElementById("name").value;
+      var password=document.getElementById("password").value;
+      var location=document.getElementById("location").value;
+      var age=document.getElementById("age").value;
+      var phone=document.getElementById("phone").value;
+      var brand=document.getElementById("brand").value;
+      var model=document.getElementById("model").value;
+
+      var verification=document.getElementById("verification").value;
+      if(name=="")
+      
+      {
+        window.alert("The name must be entered");
+        return false;
+      }
+       
+    if(password=="")
+     {
+       window.alert("enter the password");
+       return false;
+     }
+    
+     
+       else
+       {
+  
+         if(password.length>10)
+         {
+           window.alert("Password should be less than 10 characters");
+           return false;
+         }
+      }
+      if(location!="triupur")
+    
+      {
+        window.alert("enter triupur ");
+        return false;
+      }
+      
+      
+        if(age<18)
+        {
+        window.alert("Your age must 18 or greater than 18 to book a car ");
+        return false;
+        }
+    
+       if(isNaN(phone))
+      {
+        window.alert("enter only the numeric value");
+        return false;
+      }
+      if(brand!="Mahindra")
+      {
+        window.alert("enter  Mahindra or  Hyundai or Maruthi brands");
+        return false;
+      }
+      if(model=="")
+      {
+        window.alert("enter model");
+        return false;
+      }
+      if(verification=="Td4eva")
+      {
+        return true;
+      }
+      else{
+        if(verification!="Td4eva");
+        window.alert("enter correct captcha");
+        return false
+      }
+    }
+  </script>
+ </head>
+  <body bgcolor="powderblue">
+    <center><h1>CAR TESTDRIVE BOOKING</center></h1></center>
+    <form onsubmit="return validate()" name="myform" action="#">
+    <label><h4>NAME</h4></label>
+    <input class="input" type="text" id="name" style="border-color:blue"><br><br>
+
+    <label><h4>PASSWORD</h4></label>
+    <input class="input" type="text" id ="password"style="border-color:blue"><br><br>
+    <label><h4>LOCATION</h4></label>
+    <input class="input" type="text" id ="location"style="border-color:blue"><br><br>
+    <label><h4>AGE</h4></label>
+    <input class="input" type="text" id ="age"style="border-color:blue"><br><br>
+    <label><h4>PHONE</h4></label>
+
+    <input class="input" type="tele" id ="phone"style="border-color:blue"><br><br>
+    <label><h4>BRAND</h4></label>
+    <input class="input" type="text" id ="brand" style="border-color:blue"><br><br>
+    
+    <label><h4>MODEL</h4></label>
+    <input class="input" type="text" id ="model" style="border-color:blue"><br><br>
+    <label><h4>VERIFICATION</h4></label>
+    <input class="input" type="text" id ="verification"style="border-color:blue"><br><br>
+    <label><h4>PHOTO</h4></label>
+    <input class="input" type="file" name="fileupload" accept="image/*"/>
+    <input class="input" type="submit" style="background-color:blue;color:white">
+   </form>
+   <img src="captcha.jpg"width="200" height="200">
+   <a href="minitable.html"><button style="background-color:rgb(249, 20, 32)">TRAIL TIME</button></a>
+  </body>
+</html>
